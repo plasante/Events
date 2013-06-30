@@ -25,6 +25,8 @@
 <div class="tabs">
   <a ${isEvents ? 'class="s"' : ''} href='${contextPath}/events/Listing.action'>Events</a>
   <a ${isPeople ? 'class="s"' : ''} href='${contextPath}/people/Listing.action'>People</a>
+  <a ${isCities ? 'class="s"' : ''} href='${contextPath}/cities/Listing.action'>Cities</a>
+  <a ${isRoads ? 'class="s"' : ''} href='${contextPath}/roads/Listing.action'>Roads</a>
 </div>
 <div class="tabs-under-bg"></div>
 <div class="tabs-under">
@@ -35,6 +37,14 @@
   <c:if test="${isPeople}">
     <a href="Listing.action">List of People</a>
     |<a href="NewPerson.action">New Person</a>
+  </c:if>
+  <c:if test="${isCities}">
+    <a href="Listing.action">List of Cities</a>
+    |<a href="NewCity.action">New City</a>
+  </c:if>
+  <c:if test="${isRoads}">
+    <a href="Listing.action">List of Roads</a>
+    |<a href="NewRoad.action">New Road</a>
   </c:if>
   &nbsp;
 </div>
