@@ -1,0 +1,5 @@
+*.jar
+*.class
+*.exe
+*.log
+build/
