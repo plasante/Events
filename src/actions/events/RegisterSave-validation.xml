@@ -10,7 +10,9 @@
 			<message>Username is required</message>
 		</field-validator>
 		<field-validator type="regex">
-			<param name="expression"><![CDATA[(^.[a-z]{1,3}$)]]></param>
+			<param name="regexExpression">
+				<![CDATA[[a-zA-Z0-9_]+]]>
+			</param>
 			<message>Username contains invalid characters</message>
 		</field-validator>
 		<field-validator type="stringlength">
@@ -25,8 +27,12 @@
 			<param name="trim">true</param>
 			<message>Password is required</message>
 		</field-validator>
-	</field>
-	<field name="password">
+		<field-validator type="regex">
+			<param name="regexExpression">
+				<![CDATA[[a-zA-Z0-9_]+]]>
+			</param>
+			<message>Password contains invalid characters</message>
+		</field-validator>
 		<field-validator type="stringlength">
 			<param name="minLength">6</param>
 			<param name="maxLength">20</param>
