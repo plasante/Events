@@ -54,3 +54,7 @@ insert into event_person(event_id,person_id)
 select events.id, people.id
 from events,people
 where people.name='Carole Spenard';
+
+insert into cities (name) values('Montreal');
+insert into cities (name) values('Quebec');
+insert into cities (name) values('Boston');

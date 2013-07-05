@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+"-//OpenSymphony Group//XWork Validator 1.0.2//EN"
+"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+  
+<validators>
+	<field name="username">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Username is required</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="expression"><![CDATA[(^.[a-z]{1,3}$)]]></param>
+			<message>Username contains invalid characters</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">20</param>
+			<message>Username needs to be 6 to 20 characters long</message>
+		</field-validator>
+	</field>
+	
+	<field name="password">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message>Password is required</message>
+		</field-validator>
+	</field>
+	<field name="password">
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">20</param>
+			<message>Password needs to be 6 to 20 characters long</message>
+		</field-validator>
+	</field>
+</validators>

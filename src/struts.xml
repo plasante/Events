@@ -7,6 +7,15 @@
 	<constant name="struts.devMode" value="true" /> <!-- set to false for prod -->
 
 	<package name="events" namespace="/events" extends="struts-default">
+		<action name="register">
+			<result>/views/events/register.jsp</result>
+		</action>
+		
+		<action name="registerSave" class="actions.events.RegisterSave">
+			<result name="input">/views/events/register.jsp</result>
+			<result name="success" type="redirect">events/Listing.action</result>
+		</action>
+		
 		<action name="*" class="actions.events.{1}">
 			<result>/views/events/{1}.jsp</result>
 			<result name="redirect" type="redirect">${redirectUrl}</result>
@@ -16,6 +25,18 @@
 	<package name="people" namespace="/people" extends="struts-default">
 		<action name="*" class="actions.people.{1}">
 			<result>/views/people/{1}.jsp</result>
+			<result name="redirect" type="redirect">${redirectUrl}</result>
+		</action>
+	</package>
+	
+	<package name="cities" namespace="/cities" extends="struts-default">
+		<action name="New2" class="actions.cities.New2">
+			<result name="input">/cities/New2.jsp</result>
+			<result name="success" type="redirect">cities/Listing.action</result>
+		</action>
+		
+		<action name="*" class="actions.cities.{1}">
+			<result>/views/cities/{1}.jsp</result>
 			<result name="redirect" type="redirect">${redirectUrl}</result>
 		</action>
 	</package>

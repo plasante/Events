@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.hibernate.SessionFactory;
 import org.hibernate.Session;
 import data.*;
+
 import java.util.List;
 
 // This class is the business services tier in the application.
@@ -66,5 +67,16 @@ public class Services {
 
 	public void addPersonToEvent(int personId, int eventId) {
 		getEventById(eventId).getPeople().add(getPersonById(personId));
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<City> getCities() {
+		return sess().createQuery("from City").list();
+	}
+
+	public void createCity(String name) {
+		City c = new City();
+		c.setName(name);
+		sess().save(c);
 	}
 }

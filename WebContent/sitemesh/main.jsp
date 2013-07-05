@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -6,6 +7,7 @@
 <c:set var="requestURI" value="${pageContext.request.requestURI}" />
 <c:set var="isEvents" value="${fn:contains(requestURI, '/events/')}" />
 <c:set var="isPeople" value="${fn:contains(requestURI, '/people/')}" />
+<c:set var="isCities" value="${fn:contains(requestURI, '/cities/')}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -26,13 +28,13 @@
   <a ${isEvents ? 'class="s"' : ''} href='${contextPath}/events/Listing.action'>Events</a>
   <a ${isPeople ? 'class="s"' : ''} href='${contextPath}/people/Listing.action'>People</a>
   <a ${isCities ? 'class="s"' : ''} href='${contextPath}/cities/Listing.action'>Cities</a>
-  <a ${isRoads ? 'class="s"' : ''} href='${contextPath}/roads/Listing.action'>Roads</a>
 </div>
 <div class="tabs-under-bg"></div>
 <div class="tabs-under">
   <c:if test="${isEvents}">
     <a href="Listing.action">List of Events</a>
     |<a href="NewEvent.action">New Event</a>
+    |<a href="register.action">Register</a>
   </c:if>
   <c:if test="${isPeople}">
     <a href="Listing.action">List of People</a>
@@ -40,11 +42,8 @@
   </c:if>
   <c:if test="${isCities}">
     <a href="Listing.action">List of Cities</a>
-    |<a href="NewCity.action">New City</a>
-  </c:if>
-  <c:if test="${isRoads}">
-    <a href="Listing.action">List of Roads</a>
-    |<a href="NewRoad.action">New Road</a>
+    |<a href="New.action">New City</a>
+    |<a href="New2.action">New City2</a>
   </c:if>
   &nbsp;
 </div>

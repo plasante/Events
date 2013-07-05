@@ -24,5 +24,6 @@
 		
 		<mapping class="data.Event" />
 		<mapping class="data.Person" />
+		<mapping class="data.City" />
 	</session-factory>
 </hibernate-configuration>
