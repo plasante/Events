@@ -5,15 +5,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Register Page</title>
+<title><s:property value="getText('global.register_page')"/></title>
 <s:head/>
 </head>
 <body>
 
 <s:form action="registerSave">
-	<s:textfield name="username" label="Username" size="20" />
-	<s:password name="password" label="Password" size="20" />
-	<s:submit value="Register" />
+	<s:textfield name="username" key="global.username" size="20" />
+	<s:password name="password" key="global.password" size="20" />
+	<s:submit key="global.register" />
 </s:form>
 
 </body>

@@ -7,18 +7,18 @@
 	<field name="username">
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
-			<message>Username is required</message>
+			<message key="global.username_is_required" />
 		</field-validator>
 		<field-validator type="regex">
 			<param name="regexExpression">
 				<![CDATA[[a-zA-Z0-9_]+]]>
 			</param>
-			<message>Username contains invalid characters</message>
+			<message key="global.username_contains_invalid_characters" />
 		</field-validator>
 		<field-validator type="stringlength">
 			<param name="minLength">6</param>
 			<param name="maxLength">20</param>
-			<message>Username needs to be 6 to 20 characters long</message>
+			<message key="global.username_invalid_length" />
 		</field-validator>
 	</field>
 	

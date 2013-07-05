@@ -5,6 +5,7 @@
     
 <struts>
 	<constant name="struts.devMode" value="true" /> <!-- set to false for prod -->
+	<constant name="struts.custom.i18n.resources" value="global" />
 
 	<package name="events" namespace="/events" extends="struts-default">
 		<action name="register">
