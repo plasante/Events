@@ -25,18 +25,18 @@
 	<field name="password">
 		<field-validator type="requiredstring">
 			<param name="trim">true</param>
-			<message>Password is required</message>
+			<message key="global.password_is_required" />
 		</field-validator>
 		<field-validator type="regex">
 			<param name="regexExpression">
 				<![CDATA[[a-zA-Z0-9_]+]]>
 			</param>
-			<message>Password contains invalid characters</message>
+			<message key="global.password_contains_invalid_characters" />
 		</field-validator>
 		<field-validator type="stringlength">
 			<param name="minLength">6</param>
 			<param name="maxLength">20</param>
-			<message>Password needs to be 6 to 20 characters long</message>
+			<message key="global.password_invalid_length" />
 		</field-validator>
 	</field>
 </validators>

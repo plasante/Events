@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><s:property value="getText('global.register_page')"/></title>
+<title><s:text name="global.register_page" /></title>
 <s:head/>
 </head>
 <body>
@@ -13,7 +13,7 @@
 <s:form action="registerSave">
 	<s:textfield name="username" key="global.username" size="20" />
 	<s:password name="password" key="global.password" size="20" />
-	<s:submit key="global.register" />
+	<s:submit name="register" key="global.register"></s:submit>
 </s:form>
 
 </body>
