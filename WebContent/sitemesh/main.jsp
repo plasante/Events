@@ -5,6 +5,7 @@
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <c:set var="requestURI" value="${pageContext.request.requestURI}" />
+<c:set var="isAdmin"  value="${fn:contains(requestURI, '/admin/')}"  />
 <c:set var="isEvents" value="${fn:contains(requestURI, '/events/')}" />
 <c:set var="isPeople" value="${fn:contains(requestURI, '/people/')}" />
 <c:set var="isCities" value="${fn:contains(requestURI, '/cities/')}" />
@@ -25,12 +26,17 @@
 </div>
 
 <div class="tabs">
+  <a ${isAdmin  ? 'class="s"' : ''} href='${contextPath}/admin/admin.action'   ><s:text name="global.admin"/></a>
   <a ${isEvents ? 'class="s"' : ''} href='${contextPath}/events/Listing.action'>Events</a>
   <a ${isPeople ? 'class="s"' : ''} href='${contextPath}/people/Listing.action'>People</a>
   <a ${isCities ? 'class="s"' : ''} href='${contextPath}/cities/Listing.action'>Cities</a>
 </div>
 <div class="tabs-under-bg"></div>
 <div class="tabs-under">
+  <c:if test="${isAdmin}">
+  	<a href="register.action">Register</a>
+  	|<a href="login.action">Login</a>
+  </c:if>
   <c:if test="${isEvents}">
     <a href="Listing.action">List of Events</a>
     |<a href="NewEvent.action">New Event</a>

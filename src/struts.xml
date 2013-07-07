@@ -7,6 +7,18 @@
 	<constant name="struts.devMode" value="true" /> <!-- set to false for prod -->
 	<constant name="struts.custom.i18n.resources" value="global" />
 
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="admin">
+			<result>/views/admin/admin.jsp</result>
+		</action>
+		<action name="register">
+			<result>/views/admin/register.jsp</result>
+		</action>
+		<action name="login">
+			<result>/views/admin/login.jsp</result>
+		</action>
+	</package>
+	
 	<package name="events" namespace="/events" extends="struts-default">
 		<action name="register">
 			<result>/views/events/register.jsp</result>
